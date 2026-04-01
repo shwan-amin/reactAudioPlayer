@@ -1,1 +1,129 @@
+/* BUTTON COMPONENT STYLING */
+button {
+	appearance: none;
+	border: 1px solid transparent;
+	border-radius: 8px;
+	font-family: inherit;
+	font-weight: 500;
+	line-height: 1;
+	cursor: pointer;
+	transition: background-color 0.15s ease, border-color 0.15s ease, transform 0.08s ease;
+}
+
+button:hover {
+	filter: brightness(0.97);
+}
+
+button:active {
+	transform: translateY(1px);
+}
+
+button:focus-visible {
+	outline: 2px solid #111827;
+	outline-offset: 2px;
+}
+
+button:disabled {
+	opacity: 0.5;
+	cursor: not-allowed;
+	transform: none;
+}
+
+button.sm {
+	font-size: 0.75rem;
+	padding: 0.4rem 0.75rem;
+}
+
+button.med {
+	font-size: 0.95rem;
+	padding: 0.55rem 1rem;
+}
+
+button.lrge {
+	font-size: 1.1rem;
+	padding: 0.75rem 1.25rem;
+}
+
+button.red {
+	background-color: #dc2626;
+	color: #ffffff;
+	border: 1px solid #b91c1c;
+}
+
+button.yellow {
+	background-color: #facc15;
+	color: #111827;
+	border: 1px solid #eab308;
+}
+
+button.green {
+	background-color: #16a34a;
+	color: #ffffff;
+	border: 1px solid #15803d;
+}
+
+/* SLIDER STYLING */
+input[type='range'] {
+	-webkit-appearance: none;
+	appearance: none;
+	background: transparent;
+	cursor: pointer;
+}
+
+input[type='range']:focus-visible {
+	outline: 2px solid #111827;
+	outline-offset: 2px;
+	border-radius: 999px;
+}
+
+input[type='range']::-webkit-slider-runnable-track {
+	height: 6px;
+	background: #d1d5db;
+	border-radius: 999px;
+}
+
+input[type='range']::-webkit-slider-thumb {
+	-webkit-appearance: none;
+	appearance: none;
+	margin-top: -5px;
+	width: 16px;
+	height: 16px;
+	border-radius: 50%;
+	border: 1px solid #9ca3af;
+	background: #ffffff;
+}
+
+input[type='range']::-moz-range-track {
+	height: 6px;
+	background: #d1d5db;
+	border-radius: 999px;
+}
+
+input[type='range']::-moz-range-thumb {
+	width: 16px;
+	height: 16px;
+	border-radius: 50%;
+	border: 1px solid #9ca3af;
+	background: #ffffff;
+}
+
+input[type='range'].seek {
+	width: min(100%, 680px);
+}
+
+input[type='range'].volume {
+	width: 120px;
+}
+
+input[type='range'].volume::-webkit-slider-runnable-track,
+input[type='range'].volume::-moz-range-track {
+	height: 4px;
+}
+
+input[type='range'].volume::-webkit-slider-thumb,
+input[type='range'].volume::-moz-range-thumb {
+	width: 12px;
+	height: 12px;
+	margin-top: -4px;
+}
 
