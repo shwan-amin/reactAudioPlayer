@@ -18,12 +18,14 @@ body {
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	width: 100%;
+	min-height: 100vh;
 	padding: 1.5rem;
 }
 
 .card {
-	width: min(92vw, 640px);
-	aspect-ratio: 1;
+	width: 100%;
+	box-sizing: border-box;
 	background: #1a1d23;
 	border: 1px solid rgba(255, 255, 255, 0.06);
 	border-radius: 24px;
@@ -31,9 +33,24 @@ body {
 	padding: 1.5rem;
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
 	gap: 1rem;
 	transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+.card--track {
+	min-height: 160px;
+	justify-content: center;
+}
+
+.card--controls {
+	min-height: 120px;
+	justify-content: center;
+}
+
+.card--queue {
+	min-height: 240px;
+	justify-content: flex-start;
+	overflow: auto;
 }
 
 .card:hover {
