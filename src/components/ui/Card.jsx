@@ -1,7 +1,9 @@
 // The div that will render other components onto it 
-export default function Card({children, classname, rest}) {
+export default function Card({ children, props = {} }) {
+    const className = props.className ? `card ${props.className}` : 'card';
+
     return (
-        <div className={classname} {...rest}>
+        <div {...props} className={className}>
             {children}
         </div>
     )
