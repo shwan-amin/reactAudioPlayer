@@ -7,3 +7,5 @@ This project helped me practice:
 - Components design
 - Handling props and children.
 - useState and useEffect.
+
+<img width="1512" height="747" alt="Screenshot 2026-04-05 at 3 35 01 pm" src="https://github.com/user-attachments/assets/d2ff8240-5d19-4880-9170-3946c45b4f63" />
