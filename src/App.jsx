@@ -8,7 +8,7 @@ import Controls from "./components/player/Controls.jsx"
 import SeekBar from "./components/player/SeekBar.jsx"
 import Queue from "./components/queue/Queue.jsx"
 
-const PlayerContext = React.createContext();
+export const PlayerContext = React.createContext();
 function App() {
   // Init the context that will be accessed from the whole App
 
@@ -17,16 +17,19 @@ function App() {
     {
       id: 1,
       title: "Stove Steak",
+      artist: "Gagmesharkoff",
       src: "../Gagmesharkoff - Stove Steak.mp3"
     },
     {
       id: 2,
       title: "Enchanted walley whistle",
+      artist: "Ondrosik",
       src: "../Ondrosik - Enchanted walley whistle extended version.mp3"
     },
     {
       id: 3,
       title: "In A Twinkling of An Eye",
+      artist: "Pamela Yuen",
       src: "../Pamela Yuen - In A Twinkling Of An Eye.mp3"
     }
   ]);
@@ -35,6 +38,12 @@ function App() {
   const [isPlaying, setIsPlaying] = React.useState(false);
   const [volume, setVolume] = React.useState(0.8);
   const audioRef = React.useRef(null);
+
+  React.useEffect(() => {
+    if (!currentTrack && queue.length > 0) {
+      setCurrentTrack(queue[0]);
+    }
+  }, [currentTrack, queue]);
 
   return (
     <PlayerContext.Provider value={{
@@ -51,20 +60,20 @@ function App() {
       setIsPlaying,
       setVolume
     }}>
-      <audio ref={audioRef} />
+      <audio ref={audioRef} preload="metadata" />
 
-      <Card>
+      <Card props={{ className: "card--track" }}>
         <NowPlaying />
       </Card>
 
-      <Card>
+      <Card props={{ className: "card--controls" }}>
         <Player>
           <Controls />
           <SeekBar />
         </Player>
       </Card>
 
-      <Card>
+      <Card props={{ className: "card--queue" }}>
         <Queue />
       </Card>
     </PlayerContext.Provider>
